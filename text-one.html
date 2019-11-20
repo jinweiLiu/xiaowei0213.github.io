@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+	<head>
+        <title>Home</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+        <!-- Main CSS --> 
+        <link rel="stylesheet" href="css/style.css">
+
+        <!-- Font Awesome -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+  
+    <body>
+
+        <!-- Header -->
+        <div class="header-wrap d-none d-md-block" id="top">
+            <div class="container">
+                <div class="row">
+                    
+                    <!-- Left header box -->
+                    <header class="col-6 text-left">
+                        <h1>算法学习</h1>
+                    </header>
+                </div>
+            </div>
+        </div>
+
+        
+        <!-- Main navigation -->
+        <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+            <div class="container">
+                
+                <!-- Company name shown on mobile -->
+                <a class="navbar-brand d-md-none d-lg-none d-xl-none" href="#">My Blog</a>
+
+                <!-- Mobile menu toggle -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Main navigation items -->
+                <div class="collapse navbar-collapse" id="mainNavbar">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item ">
+                                <a class="nav-link" href="index.html">主页 <span class="sr-only">(current)</span></a>
+                        </li>
+
+                        <li class="nav-item active">
+                                <a class="nav-link" href="one-column.html">算法学习</a>
+                        </li>
+
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">数据库学习</a>
+                        </li>
+
+                        <li class="nav-item">
+                                <a class="nav-link" href="#">操作系统</a>
+                        </li>
+						<li class="nav-item">
+                                <a class="nav-link" href="#">计算机网络</a>
+                        </li>
+                    </ul>
+                    <!--form class="form-inline header-search-form my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" size="10"  placeholder="Search" aria-label="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form-->
+                </div>                
+            </div>
+        </nav>
+
+
+        <!-- Jumbtron / Slider >
+        <div class="jumbotron-wrap">
+            <div class="container">
+                <div class="jumbotron">
+                    <h1 class="text-center">Enjoy Learning</h1>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main content area -->
+        <main class="container">
+            
+				    <div class="ui-layout-east">
+						<article class="markdown-body" id="preview" data-open-title="Hide Preview" data-closed-title="Show Preview">
+							<div><h1 id="贪心" data-source-line="1"><a class="markdownIt-Anchor" href="#贪心"></a>贪心</h1><h5 id="1-基本概念" data-source-line="3"><a class="markdownIt-Anchor" href="#1-基本概念"></a>1、基本概念</h5><p data-source-line="5">在<strong>贪婪算法(greedy method)</strong> 中，我们要逐步构造一个最优解。每一步，我们都在一定的标准下，做出一个<strong>最优决策</strong>。做出决策所依据的标准称为<strong>贪心准则(greedy criterion)</strong>。</p><p data-source-line="7">贪心算法每一步必须满足以下条件：
+							  <strong>可行的</strong>：即它必须满足问题的约束。
+							  <strong>局部最优</strong>：他是当前步骤中所有可行选择中最佳的局部选择。
+							  <strong>不可更改</strong>：即选择一旦做出，在算法的后面步骤就不可改变了。</p><p data-source-line="12">贪心算法不是对所有问题都能得到整体最优解，选择的贪心策略必须具备无后效性，即某个状态以后的过程不会影响以前的状态，只与当前状态有关。</p><p data-source-line="14"><strong>最优子结构</strong>：当一个问题的最优解包含其子问题的最优解时，称此问题具有<strong>最优子结构</strong>性质。运用贪心策略在每一次转化时都取得了最优解。问题的最优子结构性质是该问题可用贪心算法或动态规划算法求解的关键特征。</p><h5 id="2-贪心算法的基本思路" data-source-line="16"><a class="markdownIt-Anchor" href="#2-贪心算法的基本思路"></a><strong>2、贪心算法的基本思路</strong></h5><p data-source-line="18">（1）建立数学模型来描述问题。
+							（2）把求解的问题分成若干个子问题。
+							（3）对每一子问题求解，得到子问题的局部最优解。
+							（4）把子问题的解局部最优解合成原来解问题的一个解。</p><p data-source-line="23">基本流程</p><pre data-source-line="25"><code class="hljs">Greedy(C)<span class="zh-hans">&nbsp;</span> <span class="hljs-comment">//C<span class="zh-hans">是问题的输入集合即候选集合</span></span>
+							{
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;</span> S={ };<span class="zh-hans">&nbsp;</span> <span class="hljs-comment">//<span class="zh-hans">初始解集合为空集</span></span>
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;</span> <span class="hljs-keyword">while</span> (<span class="hljs-function">not <span class="hljs-title">solution</span><span class="hljs-params">(S)</span>)<span class="zh-hans">&nbsp;</span> <span class="hljs-comment">//<span class="zh-hans">集合</span>S<span class="zh-hans">没有构成问题的一个解</span></span>
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;</span> </span>{
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> x=select(C);<span class="zh-hans">&nbsp;&nbsp;&nbsp;</span> <span class="hljs-comment">//<span class="zh-hans">在候选集合</span>C<span class="zh-hans">中做贪心选择</span></span>
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> <span class="hljs-function"><span class="hljs-keyword">if</span> <span class="hljs-title">feasible</span><span class="hljs-params">(S, x)</span><span class="zh-hans">&nbsp;</span> <span class="hljs-comment">//<span class="zh-hans">判断集合</span>S<span class="zh-hans">中加入</span>x<span class="zh-hans">后的解是否可行</span></span>
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> S</span>=S+{x};
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span> C=C-{x};
+							<span class="zh-hans">&nbsp;&nbsp;&nbsp;</span> }
+							<span class="zh-hans">&nbsp;&nbsp;</span> <span class="hljs-keyword">return</span> S;
+							}
+							</code></pre><h5 id="3-贪心和动态规划的区别" data-source-line="42"><a class="markdownIt-Anchor" href="#3-贪心和动态规划的区别"></a>3、贪心和动态规划的区别</h5><ul data-source-line="44"><li>贪心算法的每一次操作都对结果产生直接影响，而动态规划则不是。</li><li>贪心算法对每个子问题的解决方案都做出选择，不能回退（自顶向下、迭代）；动态规划则会根据以前的选择结果对当前进行选择，有回退功能（自底向上）。</li><li>能用贪心解决的问题，也可以用动态规划解决</li></ul><h5 id="4-实例" data-source-line="48"><a class="markdownIt-Anchor" href="#4-实例"></a>4、实例</h5><ul data-source-line="50"><li><strong>找零钱问题</strong></li></ul><p data-source-line="52">假如老板要找给我99分钱，他有上面的面值分别为25，10，5，1的硬币数，为了找给我最少的硬币数，那么他是不是该这样找呢，先看看该找多少个25分的，诶99／25＝3，好像是3个，要是4个的话，我们还得再给老板一个1分的，我不干，那么老板只能给我3个25分，由于还少给我24，所以还得给我2个10分的和4个1分。</p><pre data-source-line="54"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGiveMoney</span><span class="hljs-params">()</span> </span>{
+								<span class="hljs-comment">//<span class="zh-hans">找零钱</span></span>
+								<span class="hljs-keyword">int</span>[] m = {<span class="hljs-number">25</span>, <span class="hljs-number">10</span>, <span class="hljs-number">5</span>, <span class="hljs-number">1</span>};
+								<span class="hljs-keyword">int</span> target = <span class="hljs-number">99</span>;
+								<span class="hljs-keyword">int</span>[] results = giveMoney(m, target);
+								System.out.println(target + <span class="hljs-string">"<span class="zh-hans">的找钱方案</span>:"</span>);
+								<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; results.length; i++) {
+									System.out.println(results[i] + <span class="hljs-string">"<span class="zh-hans">枚</span>"</span> + m[i] + <span class="hljs-string">"<span class="zh-hans">面值</span>"</span>);
+								}
+							}
+
+							<span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] giveMoney(<span class="hljs-keyword">int</span>[] m, <span class="hljs-keyword">int</span> target) {
+								<span class="hljs-keyword">int</span> k = m.length;
+								<span class="hljs-keyword">int</span>[] num = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[k];
+								<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; k; i++) {
+									num[i] = target / m[i];
+									target = target % m[i];
+								}
+								<span class="hljs-keyword">return</span> num;
+							}
+							</code></pre><ul data-source-line="77"><li><strong>跳跃游戏</strong></li></ul><p data-source-line="79">给定一个非负整数数组，你最初位于数组的第一个位置。数组中的每个元素代表你在该位置可以跳跃的最大长度。你的目标是使用最少的跳跃次数到达数组的最后一个位置</p><pre data-source-line="81"><code class="hljs"><span class="zh-hans">输入</span>: [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">4</span>] 
+							<span class="zh-hans">输出</span>: <span class="hljs-number">2</span> 
+							<span class="zh-hans">解释</span>: <span class="zh-hans">跳到最后一个位置的最小跳跃数是</span> <span class="hljs-number">2</span><span class="zh-hans">。</span> <span class="zh-hans">从下标为</span> <span class="hljs-number">0</span> <span class="zh-hans">跳到下标为</span> <span class="hljs-number">1</span> <span class="zh-hans">的位置，跳</span> <span class="hljs-number">1</span> <span class="zh-hans">步，然后跳</span> <span class="hljs-number">3</span> <span class="zh-hans">步到达数组的最后一个位置。</span> 
+							</code></pre><p data-source-line="87">这道题的最优解是可以时间复杂度优化到 O(n) 的，那就是采用贪心算法，我们从左边的起点开始跳跃的时候，我们<strong>应该跳跃到哪一个点比较合适呢？</strong>，显然，每次都跳跃最大长度的话，是不行的。例如对于上面 arr = {2, 3, 1, 1, 4, 2, 1} 这个例子，刚开 arr[0] = 2，那么我们可以跳到 arr[1] = 3 或者 arr[2] = 1 上，显然，我们跳跃 arr[1] = 3 会更好一点。如图（图片来源于网络）</p><p data-source-line="89"><img data-src="https%3A%2F%2Fwww.cxyxiaowu.com%2Fwp-content%2Fuploads%2F2019%2F10%2F1572143296-4ef90438b850485.png" alt="leetcode 第45题：跳跃游戏2" src="https://www.cxyxiaowu.com/wp-content/uploads/2019/10/1572143296-4ef90438b850485.png?ynotemdtimestamp=1573459267104" data-processed="https%3A%2F%2Fwww.cxyxiaowu.com%2Fwp-content%2Fuploads%2F2019%2F10%2F1572143296-4ef90438b850485.png"></p><p data-source-line="91">接着同样的道理，我们可以从 arr[1] = 3 这个位置开始跳跃，它可以跳跃到 arr[2] = 1, arr[3] = 1, arr[4] = 4 这三个位置，显然，我们跳到 arr[4] = 4 这个位置好一点，如图（图片来源于网络）</p><p data-source-line="93"><img data-src="https%3A%2F%2Fwww.cxyxiaowu.com%2Fwp-content%2Fuploads%2F2019%2F10%2F1572143296-5129815bec3ce29.png" alt="leetcode 第45题：跳跃游戏2" src="https://www.cxyxiaowu.com/wp-content/uploads/2019/10/1572143296-5129815bec3ce29.png?ynotemdtimestamp=1573459267104" data-processed="https%3A%2F%2Fwww.cxyxiaowu.com%2Fwp-content%2Fuploads%2F2019%2F10%2F1572143296-5129815bec3ce29.png"></p><p data-source-line="95">也就是说，我们要跳跃的那个点，可以使得<strong>上一次 + 下一次</strong>的跳跃总距离最远。代码如下</p><pre data-source-line="97"><code class="hljs"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">jump</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>{
+								<span class="hljs-keyword">if</span>(nums.length &lt; <span class="hljs-number">2</span>)
+									<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+								<span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;
+								<span class="hljs-keyword">int</span> end = <span class="hljs-number">0</span>; <span class="hljs-comment">// <span class="zh-hans">能跳到的最远距离</span></span>
+								<span class="hljs-keyword">int</span> max = <span class="hljs-number">0</span>; <span class="hljs-comment">// <span class="zh-hans">下一步可以跳到的最远距离</span></span>
+								<span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">1</span>; i++){
+									max = Math.max(max, i + nums[i]);
+									<span class="hljs-comment">// <span class="zh-hans">更新当前点</span></span>
+									<span class="hljs-keyword">if</span>(i == end){
+										end = max;
+										sum++;
+									}
+								}
+
+								<span class="hljs-keyword">return</span> sum;
+							}
+							</code></pre></div>
+						</article> <!-- 实时预览 -->
+                    </div>
+				
+        </main>
+
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-bottom">
+                    <p class="text-center">Copyright &copy; 2019.Company name All rights reserved.</p>
+                    <p class="text-center"><a href="#top" target="_self">返回顶部</a></p>
+            </div>
+            
+        </footer>
+
+
+
+        <!-- Bootcamp JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+		<script src="https://note.youdao.com/md/vendor-c7413287a3.js"></script>
+        <script src="https://note.youdao.com/md/index-3abeeca70a.js"></script>
+
+    </body>
+</html>

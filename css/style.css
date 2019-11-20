@@ -578,7 +578,8 @@ pre {
 .col {
   flex-basis: 0;
   flex-grow: 1;
-  max-width: 100%; }
+  max-width: 100%; 
+}
 
 .col-auto {
   flex: 0 0 auto;
@@ -6714,7 +6715,8 @@ html {
 
 
 .article {
-	margin-bottom: 0px;
+	margin-bottom: 5px;
+	height:180px;
 }
 
 
