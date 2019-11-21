@@ -161,14 +161,7 @@
 						<li><p>唯一索引:确保数据唯一性</p>
 						<p><strong>CREATE UNIQUE INDEX index_name ON table(column(length))</strong></p>
 						</li>
-						<li><p>主键索引:是唯一索引的特定类型,创建主键时自动创建</p>
-						<pre><code>CREATE TABLE table (
-							 id int(11) NOT NULL AUTO_INCREMENT ,
-							 title char(255) NOT NULL,
-							 PRIMARY KEY (id)
-						);
-						</code></pre>
-						</li>
+						<li><p>主键索引:是唯一索引的特定类型,创建主键时自动创建</p></li>
 						<li><p>组合索引: 多个字段上建立的索引，提高复合条件查询的速度</p>
 						<p><strong>create index index_name_age on student(name,age)</strong></p>
 						</li>
@@ -271,51 +264,7 @@
 						<li>通过存储过程能够使没有权限的用户在控制之下间接地存取数据库，从而确保数据的安全。</li>
 
 						</ul>
-						<p><strong>使用:</strong></p>
-						<pre><code class='language-mysql' lang='mysql'>create procedure porcedureName () 
-						begin 
-							select name from user; 
-						end; 
-						</code></pre>
-						<h4>9、数据库锁</h4>
-						<h5>9.1、锁的分类</h5>
-						<p>1）按锁的粒度划分，可分为表级锁、行级锁、页级锁（mysql）
-						2）按锁级别划分，可分为共享锁、排他锁
-						3）按使用方式划分，可分为乐观锁、悲观锁 </p>
-						<p><strong>表级锁（偏向于读）</strong></p>
-						<ul>
-						<li>优缺点</li>
-
-						</ul>
-						<blockquote><p>开销小，加锁快；不会出现死锁；锁定粒度大，发生锁冲突的概率最高，并发度最低</p>
-						</blockquote>
-						<ul>
-						<li>支持引擎：MyISAM、MEMORY、InnoDB</li>
-						<li>表级锁定分为表共享读锁（共享锁）与表独占写锁（排他锁）</li>
-
-						</ul>
-						<p><strong>行级锁（偏向于写）</strong></p>
-						<ul>
-						<li>优缺点</li>
-
-						</ul>
-						<blockquote><p>开销大，加锁慢；会出现死锁；锁定粒度最小，发生锁冲突的概率最低，并发度也最高。</p>
-						</blockquote>
-						<ul>
-						<li>支持引擎：InnoDB</li>
-						<li>行级锁定分为行共享读锁（共享锁）与行独占写锁（排他锁）</li>
-
-						</ul>
-						<p><strong>页级锁</strong></p>
-						<p>对于行级锁与表级锁的折中，开销和加锁时间界于表锁和行锁之间；会出现死锁；锁定粒度界于表锁和行锁之间，并发度一般</p>
-						<p><strong>共享锁（读锁）</strong></p>
-						<p>共享锁就是多个事务对于同一数据可以共享一把锁，都能访问到数据，但是只能读不能修改。（只能读不能改）
-						用法：SELECT … LOCK IN SHARE MODE;前边必须使用begin</p>
-						<p><strong>排他锁（写锁）</strong></p>
-						<p>一个事务获取了一个数据行的排他锁，其他事务就不能再获取该行的其他锁，包括共享锁和排他锁，但是获取排他锁的事务是可以对数据就行读取和修改。
-						可以直接通过select …from…查询数据，因为普通查询没有任何锁机制。
-						用法：SELECT … FOR UPDATE;前边必须使用begin（锁一行）</p>
-
+						
 					</article>
 						
 					
@@ -337,7 +286,7 @@
                             <li>iOS / Android</li>
                         </ul>
 
-                    </p>
+                    </p-->
 
                 </div>        
             </div> 
