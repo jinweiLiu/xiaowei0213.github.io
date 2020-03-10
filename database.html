@@ -86,7 +86,7 @@
              
                 <!-- Main content-->
                 <div class="col">
-                    <article>
+                    <p>
 						<h1>数据库</h1>
 						<h4>1、事务的四大特性（ACID）</h4>
 						<p>事务的概念：访问并可能更新数据库中各种数据项的一个程序执行单元（unit），它通常由高级数据库操纵语言或编程语言（如SQL，C++或Java）书写的用户程序的执行所引起。<code>当在数据库中更改数据成功时</code>，在事务中更改的数据便会提交，不再改变。否则，事务就取消或者回滚，更改无效。</p>
@@ -154,18 +154,14 @@
 						<p><strong>按逻辑角度分</strong></p>
 						<ul>
 						<li>普通索引：最基本的索引，没有任何限制</li>
-
-						</ul>
-						<p>       <strong>CREATE INDEX index_name ON table(column(length))</strong></p>
-						<ul>
+						<p><pre>CREATE INDEX index_name ON table(column(length))</pre></p>
 						<li><p>唯一索引:确保数据唯一性</p>
-						<p><strong>CREATE UNIQUE INDEX index_name ON table(column(length))</strong></p>
+						<p><pre>CREATE UNIQUE INDEX index_name ON table(column(length))</pre></p>
 						</li>
 						<li><p>主键索引:是唯一索引的特定类型,创建主键时自动创建</p></li>
 						<li><p>组合索引: 多个字段上建立的索引，提高复合条件查询的速度</p>
-						<p><strong>create index index_name_age on student(name,age)</strong></p>
+						<p><pre>create index index_name_age on student(name,age)</pre></p>
 						</li>
-
 						</ul>
 						<p><strong>按物理存储分</strong></p>
 						<p>聚集索引</p>
@@ -265,7 +261,7 @@
 
 						</ul>
 						
-					</article>
+					</p>
 						
 					
                         <!--h2 class="article-title">Introduction to pursuit</h2>
